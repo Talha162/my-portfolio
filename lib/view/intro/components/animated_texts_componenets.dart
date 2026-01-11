@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../res/constants.dart';
-import '../../../view model/responsive.dart';
+import '../../../view_model/responsive.dart';
 
 class AnimatedImageContainer extends StatefulWidget {
   const AnimatedImageContainer({Key? key, this.height = 300, this.width = 250})
@@ -42,17 +42,17 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               gradient: const LinearGradient(colors: [
-                Colors.pinkAccent,
-                Colors.blue,
+                accentTeal,
+                accentCoral,
               ]),
               boxShadow: const [
                 BoxShadow(
-                  color: Colors.pink,
+                  color: accentTeal,
                   offset: Offset(-2, 0),
                   blurRadius: 20,
                 ),
                 BoxShadow(
-                  color: Colors.blue,
+                  color: accentCoral,
                   offset: Offset(2, 0),
                   blurRadius: 20,
                 ),
@@ -61,7 +61,7 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
             child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: cardColor,
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Image.asset(
@@ -77,6 +77,14 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
                         ? MediaQuery.sizeOf(context).width * 0.14
                         : 200,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey[800],
+                    child: const Center(
+                      child: Icon(Icons.image_not_supported, color: Colors.white),
+                    ),
+                  );
+                },
               ),
             ),
           ),

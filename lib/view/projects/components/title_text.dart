@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
-import '../../../view model/responsive.dart';
+import '../../../res/constants.dart';
+import '../../../view_model/responsive.dart';
 
 class TitleText extends StatelessWidget {
   const TitleText({super.key, required this.prefix, required this.title});
@@ -32,8 +33,8 @@ class TitleText extends StatelessWidget {
                       end: Alignment.centerRight,
                       begin: Alignment.centerLeft,
                       colors: [
-                        Colors.pink,
-                        Colors.cyanAccent,
+                        accentTeal,
+                        accentCoral,
                       ]).createShader(bounds);
                 },
                 child: Text(

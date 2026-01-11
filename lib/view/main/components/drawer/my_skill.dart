@@ -26,14 +26,14 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
                 const SizedBox(width: 5,),
                 Text(title,style: const TextStyle(color: Colors.white),),
                 const Spacer(),
-                Text('${(value*100).toInt().toString()}%'),
+                Text('${(value*100).toInt().toString()}%', style: const TextStyle(color: bodyTextColor)),
               ],
             ),
             const SizedBox(height: defaultPadding/2,),
             LinearProgressIndicator(
               value: value,
-              backgroundColor: Colors.black,
-              color: Colors.amberAccent,
+              backgroundColor: secondaryColor,
+              color: accentTeal,
             ),
           ],
         );
@@ -50,14 +50,14 @@ class MySKills extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AnimatedLinearProgressIndicator(percentage: 0.85, title: 'Flutter',image: 'assets/icons/flutter.png',),
+        AnimatedLinearProgressIndicator(percentage: 0.92, title: 'Flutter',image: 'assets/icons/flutter.png',),
         AnimatedLinearProgressIndicator(percentage: 0.9, title: 'Dart',image: 'assets/icons/dart.png'),
-        AnimatedLinearProgressIndicator(percentage: 0.8, title: 'Firebase',image: 'assets/icons/firebase.png'),
-        AnimatedLinearProgressIndicator(percentage: 0.85, title: 'Node. js',image: 'assets/icons/node_js.png'),
-        AnimatedLinearProgressIndicator(percentage: 0.8, title: 'Responsive Design',image: 'assets/icons/flutter.png'),
-        AnimatedLinearProgressIndicator(percentage: 0.9, title: 'Clean Architecture',image: 'assets/icons/flutter.png'),
-        AnimatedLinearProgressIndicator(percentage: 0.7, title: 'APIs Integration',image: 'assets/icons/api.png'),
-        AnimatedLinearProgressIndicator(percentage: 0.93, title: 'Getx',image: 'assets/icons/dart.png'),
+        AnimatedLinearProgressIndicator(percentage: 0.86, title: 'Firebase',image: 'assets/icons/firebase.png'),
+        AnimatedLinearProgressIndicator(percentage: 0.84, title: 'Node.js',image: 'assets/icons/node_js.png'),
+        AnimatedLinearProgressIndicator(percentage: 0.82, title: 'REST APIs',image: 'assets/icons/api.png'),
+        AnimatedLinearProgressIndicator(percentage: 0.88, title: 'Clean Architecture',image: 'assets/icons/flutter.png'),
+        AnimatedLinearProgressIndicator(percentage: 0.8, title: 'UI/UX & Responsive',image: 'assets/icons/flutter.png'),
+        AnimatedLinearProgressIndicator(percentage: 0.9, title: 'GetX',image: 'assets/icons/dart.png'),
       ],);
   }
 }

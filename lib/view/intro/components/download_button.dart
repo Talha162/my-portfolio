@@ -10,7 +10,7 @@ class DownloadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        launchUrl(Uri.parse('https://drive.google.com/file/d/1pmzG09kNnkX5HTxXUsT5a6ykjJE4Bf1d/view?usp=sharing'));
+        launchUrl(Uri.parse('mailto:talha.cusit.pk@gmail.com?subject=Resume%20Request&body=Hi%20Muhammad%20Talha%2C%20I%20would%20like%20to%20request%20your%20latest%20resume.'));
       },
       child: Container(
         alignment: Alignment.center,
@@ -18,21 +18,21 @@ class DownloadButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
             boxShadow:const [
-              BoxShadow(color: Colors.blue,offset: Offset(0, -1),blurRadius: 5),
-              BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: 5),
+              BoxShadow(color: accentTeal,offset: Offset(0, -1),blurRadius: 6),
+              BoxShadow(color: accentCoral,offset: Offset(0, 1),blurRadius: 6),
             ],
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Colors.pink,
-                Colors.blue.shade900,
+                accentTeal,
+                accentCoral,
               ]),
         ),
         child: Row(
           children: [
             Text(
-              'Download CV',
+              'Get Resume',
               style: Theme.of(context).textTheme.labelSmall!.copyWith(
                   color: Colors.white,
                   letterSpacing: 1.2,

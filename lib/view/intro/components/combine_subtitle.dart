@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/res/constants.dart';
 import 'package:flutter_portfolio/view/intro/components/subtitle_text.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import '../../../view model/responsive.dart';
+import '../../../view_model/responsive.dart';
 
 class CombineSubtitleText extends StatelessWidget {
   const CombineSubtitleText({super.key});
@@ -13,13 +14,13 @@ class CombineSubtitleText extends StatelessWidget {
       children: [
         const Responsive(
           desktop: AnimatedSubtitleText(
-              start: 30, end: 40, text: 'Flutter '),
+              start: 30, end: 40, text: 'Full-Stack Flutter '),
           largeMobile: AnimatedSubtitleText(
-              start: 30, end: 25, text: 'Flutter '),
+              start: 30, end: 25, text: 'Full-Stack Flutter '),
           mobile: AnimatedSubtitleText(
-              start: 25, end: 20, text: 'Flutter '),
+              start: 25, end: 20, text: 'Full-Stack Flutter '),
           tablet: AnimatedSubtitleText(
-              start: 40, end: 30, text: 'Flutter '),
+              start: 40, end: 30, text: 'Full-Stack Flutter '),
         ),
         (kIsWeb && Responsive.isLargeMobile(context)
             ? const Responsive(
@@ -47,8 +48,8 @@ class CombineSubtitleText extends StatelessWidget {
             : ShaderMask(
           shaderCallback: (bounds) {
             return const LinearGradient(colors: [
-              Colors.pink,
-              Colors.blue,
+              accentTeal,
+              accentCoral,
             ]).createShader(bounds);
           },
           child: const Responsive(

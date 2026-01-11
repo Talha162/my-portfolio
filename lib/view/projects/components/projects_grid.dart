@@ -3,7 +3,7 @@ import 'package:flutter_portfolio/view/projects/components/project_info.dart';
 import 'package:get/get.dart';
 import '../../../model/project_model.dart';
 import '../../../res/constants.dart';
-import '../../../view model/getx_controllers/projects_controller.dart';
+import '../../../view_model/getx_controllers/projects_controller.dart';
 class ProjectGrid extends StatelessWidget {
   final int crossAxisCount;
   final double ratio;
@@ -24,17 +24,17 @@ class ProjectGrid extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 gradient: const LinearGradient(colors: [
-                  Colors.pinkAccent,
-                  Colors.blue,
+                  accentTeal,
+                  accentCoral,
                 ]),
                 boxShadow:  [
                   BoxShadow(
-                    color: Colors.pink,
+                    color: accentTeal,
                     offset: const Offset(-2, 0),
                     blurRadius: controller.hovers[index] ? 20 : 10,
                   ),
                   BoxShadow(
-                      color: Colors.blue,
+                      color: accentCoral,
                       offset: const Offset(2, 0),
                       blurRadius: controller.hovers[index] ? 20 : 10,),
                 ]),

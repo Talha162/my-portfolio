@@ -1,11 +1,11 @@
 {
-    "name": "flutter_portfolio",
-    "short_name": "flutter_portfolio",
+    "name": "Muhammad Talha - Flutter Developer",
+    "short_name": "Muhammad Talha",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#070B14",
+    "theme_color": "#0B1020",
+    "description": "Portfolio of Muhammad Talha, Full-Stack Flutter Developer.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../model/certificate_model.dart';
 import '../../../res/constants.dart';
-import '../../../view model/getx_controllers/certification_controller.dart';
+import '../../../view_model/getx_controllers/certification_controller.dart';
 import 'certificates_details.dart';
 class CertificateGrid extends StatelessWidget {
   final int crossAxisCount;
@@ -24,17 +24,17 @@ class CertificateGrid extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 gradient: const LinearGradient(colors: [
-                  Colors.pinkAccent,
-                  Colors.blue,
+                  accentTeal,
+                  accentCoral,
                 ]),
                 boxShadow:  [
                   BoxShadow(
-                    color: Colors.pink,
+                    color: accentTeal,
                     offset: const Offset(-2, 0),
                     blurRadius: controller.hovers[index] ? 20 : 10,
                   ),
                   BoxShadow(
-                    color: Colors.blue,
+                    color: accentCoral,
                     offset: const Offset(2, 0),
                     blurRadius: controller.hovers[index] ? 20 : 10,),
                 ]),

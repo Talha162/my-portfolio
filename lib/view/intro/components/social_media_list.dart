@@ -14,7 +14,7 @@ class SocialMediaIconList extends StatelessWidget {
           const Spacer(),
           RotatedBox(
             quarterTurns: -3,
-            child: Text('Follow Me',style: Theme.of(context).textTheme.titleSmall!.copyWith(
+            child: Text('Connect',style: Theme.of(context).textTheme.titleSmall!.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),),
@@ -24,7 +24,7 @@ class SocialMediaIconList extends StatelessWidget {
             width: 3,
             margin: const EdgeInsets.symmetric(vertical: defaultPadding * 0.5),
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: accentTeal,
                 borderRadius: BorderRadius.circular(defaultPadding)
             ),
           ),

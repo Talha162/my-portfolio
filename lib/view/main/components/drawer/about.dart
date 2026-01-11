@@ -8,7 +8,7 @@ class About extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.23,
       child: Container(
-        color:  bgColor,
+        color:  surfaceColor,
         child: Column(
           children: [
             const Spacer(flex: 2,),
@@ -16,7 +16,7 @@ class About extends StatelessWidget {
             const Spacer(),
             Text('Muhammad Talha',style: Theme.of(context).textTheme.titleSmall,),
             const SizedBox(height: defaultPadding/4,),
-            const Text('Flutter Developer & Graduate of\nComputer Science',
+            const Text('Full-Stack Flutter Developer\nBSc Computer Science',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w200,

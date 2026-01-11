@@ -3,7 +3,7 @@ import 'package:flutter_portfolio/view/projects/components/project_deatail.dart'
 import 'package:get/get.dart';
 import '../../../model/project_model.dart';
 import '../../../res/constants.dart';
-import '../../../view model/getx_controllers/projects_controller.dart';
+import '../../../view_model/getx_controllers/projects_controller.dart';
 import 'image_viewer.dart';
 
 class ProjectStack extends StatelessWidget {
@@ -24,7 +24,7 @@ class ProjectStack extends StatelessWidget {
           padding: const EdgeInsets.only(left: defaultPadding,right: defaultPadding,top: defaultPadding),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: bgColor),
+              color: cardColor),
           duration: const Duration(milliseconds: 500),
           child: ProjectDetail(index: index,),
       ),

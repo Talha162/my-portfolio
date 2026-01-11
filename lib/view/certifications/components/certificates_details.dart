@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../model/certificate_model.dart';
 import '../../../res/constants.dart';
-import '../../../view model/getx_controllers/certification_controller.dart';
+import '../../../view_model/getx_controllers/certification_controller.dart';
 
 class CertificateStack extends StatelessWidget {
   final controller = Get.put(CertificationController());
@@ -25,7 +25,7 @@ class CertificateStack extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: bgColor),
+              color: cardColor),
           duration: const Duration(milliseconds: 500),
           child: SingleChildScrollView(
             child: Column(
@@ -46,8 +46,8 @@ class CertificateStack extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(certificateList[index].organization,style: const TextStyle(color: Colors.amber),),
-                    Text(certificateList[index].date,style: const TextStyle(color: Colors.grey,fontSize: 12),),
+                    Text(certificateList[index].organization,style: const TextStyle(color: accentGold),),
+                    Text(certificateList[index].date,style: const TextStyle(color: bodyTextColor,fontSize: 12),),
                   ],
                 ),
                 const SizedBox(height: defaultPadding/2,),
@@ -61,38 +61,44 @@ class CertificateStack extends StatelessWidget {
                       ]
                   ),),
                 const SizedBox(height: defaultPadding,),
-                InkWell(
-                  onTap: () {
-                    launchUrl(Uri.parse(certificateList[index].credential));
-                  },
-                  child: Container(
-                    height: 40,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        gradient: LinearGradient(
-                            colors: [
-                              Colors.pink,
-                              Colors.blue.shade900,
-                            ]
-                        ),
-                        boxShadow:const [
-                          BoxShadow(color: Colors.blue,offset: Offset(0, -1),blurRadius: 5),
-                          BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: 5),
-                        ]
+                if (certificateList[index].credential.isNotEmpty)
+                  InkWell(
+                    onTap: () {
+                      launchUrl(Uri.parse(certificateList[index].credential));
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          gradient: LinearGradient(
+                              colors: [
+                                accentTeal,
+                                accentCoral,
+                              ]
+                          ),
+                          boxShadow:const [
+                            BoxShadow(color: accentTeal,offset: Offset(0, -1),blurRadius: 5),
+                            BoxShadow(color: accentCoral,offset: Offset(0, 1),blurRadius: 5),
+                          ]
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Credentials',style: TextStyle(color: Colors.white,fontSize: 10),),
+                          SizedBox(width: 5,),
+                          Icon(
+                            CupertinoIcons.arrow_turn_up_right,color: Colors.white,size: 10,
+                          )
+                        ],
+                      ),
                     ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Credentials',style: TextStyle(color: Colors.white,fontSize: 10),),
-                        SizedBox(width: 5,),
-                        Icon(
-                          CupertinoIcons.arrow_turn_up_right,color: Colors.white,size: 10,
-                        )
-                      ],
-                    ),
+                  )
+                else
+                  const Text(
+                    'Credential available on request',
+                    style: TextStyle(color: Colors.grey, fontSize: 11),
                   ),
-                ),
 
               ],
             ),

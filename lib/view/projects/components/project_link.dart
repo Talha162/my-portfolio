@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../model/project_model.dart';
+import '../../../res/constants.dart';
 
 class ProjectLinks extends StatelessWidget {
   final int index;
@@ -13,7 +14,7 @@ class ProjectLinks extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Text('Check on Github',style: TextStyle(color: Colors.white),overflow: TextOverflow.ellipsis),
+            const Text('View on GitHub',style: TextStyle(color: Colors.white),overflow: TextOverflow.ellipsis),
             IconButton(onPressed: () {launchUrl(Uri.parse(projectList[index].link));}, icon: SvgPicture.asset('assets/icons/github.svg')),
           ],
         ),
@@ -21,7 +22,7 @@ class ProjectLinks extends StatelessWidget {
         TextButton(
             onPressed: () {
               launchUrl(Uri.parse(projectList[index].link));
-            }, child: const Text('Read More>>',overflow: TextOverflow.ellipsis,style: TextStyle(color: Colors.amber,fontWeight: FontWeight.bold,fontSize: 10),))
+            }, child: const Text('Explore >>',overflow: TextOverflow.ellipsis,style: TextStyle(color: accentGold,fontWeight: FontWeight.bold,fontSize: 10),))
       ],
     );
   }

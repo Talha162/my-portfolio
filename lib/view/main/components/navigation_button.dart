@@ -10,13 +10,15 @@ class NavigationTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: onTap,
-        child: Text(
-          text,
-          style: Theme.of(context)
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          textStyle: Theme.of(context)
               .textTheme
               .labelMedium!
-              .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-        ));
+              .copyWith(fontWeight: FontWeight.w700, letterSpacing: 0.6),
+        ),
+        onPressed: onTap,
+        child: Text(text));
   }
 }
